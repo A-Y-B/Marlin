@@ -12,34 +12,72 @@ $db_password = ''; // пароль пользователя
 
 $charset = 'utf8'; // кодировка по умолчанию
 
+$data = $_POST;
+
 $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+
+
+
 $dsn = "$driver:host=$host;dbname=$db_name;charset=$charset";
+
 $pdo = new PDO($dsn, $db_user, $db_password, $options);
 
 $sql = "SELECT * FROM table_name where id = :id";
+
 $statement = $pdo->prepare($sql);
 
 
-
-//  получившееся выражение выполняем методом execute(), 
-//  передавая в него массив с переменными, которые используются в запросе:
-
-
-$statement->execute($data); // НЕПОНЯТКА ЗДЕСЬ У МЕНЯ :(
-
-
+$statement->bindValue(1, 'email');
+$statement->execute($data);
 
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-// var_dump($result);
+var_dump($result);
 
-// Рахим привет, здесь не понял, переменную $data, не создавал же или объясни как создать ее, или вообще может не нужно ее создавать скажи, не понимаю, что делать подскажи плиз :)
 
-// я создал бд - blog
-// создал в бд таблицу - comments
+Fatal error: Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound in E:\OSPanel\domains\test\pdo.php:31 Stack trace: #0 E:\OSPanel\domains\test\pdo.php(31): PDOStatement->execute(Array) #1 {main} thrown in E:\OSPanel\domains\test\pdo.php on line 31
 
-// сделал  var_dump($result);
+//Привет! В execute() в целом, что нужно передавать? Что он там ожидает?)
+//Правильно Данные. То есть до этого мы их привязываем к меткам: $statement->bindValue(1, 'email');
+//А теперь же нужно связать эту метку с конкретным email-ом! А где он лежит? В $_POST['email'];
+//Поэтому, чтобы не прописывать вручную, проще просто передач пачку с данными в execute,
+// он там сам разберется какие данные под какую метку подставлять.
 
-// выдал ошибку:
-// Fatal error: Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound in E:\OSPanel\domains\test\pdo.php:28 Stack trace: #0 E:\OSPanel\domains\test\pdo.php(28): PDOStatement->execute() #1 {main} thrown in E:\OSPanel\domains\test\pdo.php on line 28
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
