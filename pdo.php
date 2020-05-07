@@ -40,5 +40,6 @@ $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 // сделал  var_dump($result);
 
-// выдал ошибку: Fatal error
+// выдал ошибку:
+// Fatal error: Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound in E:\OSPanel\domains\test\pdo.php:28 Stack trace: #0 E:\OSPanel\domains\test\pdo.php(28): PDOStatement->execute() #1 {main} thrown in E:\OSPanel\domains\test\pdo.php on line 28
 
