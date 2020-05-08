@@ -1,5 +1,7 @@
 <?php
 
+require_once 'form.php';
+
 $driver = 'mysql'; // тип базы данных, с которой мы будем работать
 
 $host = 'localhost';// альтернатива '127.0.0.1' - адрес хоста, в нашем случае локального
@@ -31,13 +33,3 @@ $statement->bindValue(1, 'email');
 $data = $_POST['email'];
 
 var_dump($data);die();
-
-
-
-$statement->execute($data);
-
-
-
-$result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-// var_dump($result);
