@@ -32,4 +32,4 @@ $statement->bindValue(1, 'email');
 
 $data = $_POST['email'];
 
-var_dump($data);die();
+// var_dump($data);die();
