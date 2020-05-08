@@ -32,4 +32,14 @@ $statement->bindValue(1, 'email');
 
 $data = $_POST['email'];
 
-// var_dump($data);die();
+var_dump($data);die();
+
+
+
+$statement->execute($data);
+
+
+
+$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+//var_dump($result);
