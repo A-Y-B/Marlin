@@ -22,7 +22,7 @@ $dsn = "$driver:host=$host;dbname=$db_name;charset=$charset";
 
 $pdo = new PDO($dsn, $db_user, $db_password, $options);
 
-$sql = "SELECT * FROM 'registration' where email = :email";
+$sql = "SELECT * FROM registration where email = :email";
 
 $statement = $pdo->prepare($sql);
 
@@ -35,8 +35,8 @@ $statement = $pdo->prepare($sql);
 
 
 
-$statement->execute('$_POST');
-//var_dump($data);die();
+$statement->execute($_POST);
+//var_dump($statement);die();
 
 
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
