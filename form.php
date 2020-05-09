@@ -7,28 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-            
-            
-                <form method="post">
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" placeholder="password">
-                    </div>
+<div class="container form">
+    <div class="row">
+        <div class="col-md-6">
 
-                        <button type="submit" class="btn btn-primary">Отправить</button>
-                </form>
-                
-            </div>
-        </div>
+            <form action="pdo.php" method="POST">
+
+<!--                <input type="text" name="name" placeholder="Имя" >-->
+
+                <input type="email" name="email" placeholder="Введите свой: email">
+
+<!--                <input type="password" name="password" placeholder="Пароль">-->
+
+                <button type="submit" class="btn btn-primary">Отправить</button>
+
+            </form>
+
+        </div><!-- col-md-6-->
     </div>
+</div>
 
 </body>
 </html>
+
