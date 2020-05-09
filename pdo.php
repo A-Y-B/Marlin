@@ -1,6 +1,6 @@
 <?php
 
-require_once 'form.php';
+//var_dump ($_POST);die();
 
 $driver = 'mysql'; // тип базы данных, с которой мы будем работать
 
@@ -26,20 +26,20 @@ $sql = "SELECT * FROM 'registration' where email = :email";
 
 $statement = $pdo->prepare($sql);
 
-$statement->bindValue(1, 'email');
+//$statement->bindValue(1, 'email');
 
 
 
-$data = $_POST['email'];
-
-// var_dump($data);die();
-
+//$data = $_POST['email'];
+//var_dump($data);die();
 
 
-$statement->execute($data);
 
+$statement->execute('$_POST');
+//var_dump($data);die();
 
 
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-//var_dump($result);
+// var_dump($result);
+
