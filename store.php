@@ -15,8 +15,6 @@ $statement->execute([
     'status' => $status
 ]);
 
-//var_dump($sql);die();
-
 $name = $_FILES['image']['name'];
 $tmp_name = $_FILES['image']['tmp_name'];
 
