@@ -1,11 +1,11 @@
 <?php
-// Подключение и выборка с БД
-$pdo = new PDO('mysql:host=localhost; dbname=student;', 'root', '');
-$sql = 'SELECT * FROM categories';
-$statement = $pdo->query($sql);
 
+$pdo = new PDO('mysql:host=localhost; dbname=student;', 'root', '');
+
+$sql = 'SELECT * FROM categories';
+
+$statement = $pdo->query($sql);
 $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
-//var_dump($products);die;
 ?>
 
 <!doctype html>
