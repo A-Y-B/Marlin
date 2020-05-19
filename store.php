@@ -3,16 +3,19 @@
 $title = $_POST['title'];
 $description = $_POST['description'];
 $status = isset($_POST['status']) ? 1 : 0;
+$category_id = $_POST['categories'];
 
 $pdo = new PDO('mysql:host=localhost; dbname=student;', 'root', '');
 
-$sql = 'INSERT INTO products (title, description, status) VALUES (:title, :description, :status)';
+$sql = 'INSERT INTO products (title, description, status, image, category_id) VALUES (:title, :description, :status, :image, :category_id)';
 
 $statement = $pdo->prepare($sql);
 $statement->execute([
     'title' => $title,
     'description' => $description,
-    'status' => $status
+    'status' => $status,
+    'image' => $image,
+    'category_id' => $category_id
 ]);
 
 $name = $_FILES['image']['name'];
