@@ -30,12 +30,14 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- form -->
     <form action="create-store-db.php" method="post" enctype="multipart/form-data">
+        
         <!-- title -->
         <div class="form-group">
             <label for="">Название</label>
 
             <input name="title" type="text" class="form-control">
         </div>
+        
         <!-- description -->
         <div class="form-group">
             <label for="">Описание</label>
@@ -51,7 +53,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <!-- foreach -->
                     <?php foreach ($categories as $category): ?>
 
-                            <option value=""><?php echo $category['title']; ?></option>
+                            <option value="<?php echo $category['id']; ?>"><?php echo $category['title']; ?></option>
 
                     <?php endforeach; ?>
                 </select>
