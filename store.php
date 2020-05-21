@@ -3,7 +3,7 @@
 $title = $_POST['title'];
 $description = $_POST['description'];
 $status = isset($_POST['status']) ? 1 : 0;
-$category_id = $_POST['categories'];
+$category_id = $_POST['category_id'];
 
 $pdo = new PDO('mysql:host=localhost; dbname=student;', 'root', '');
 
