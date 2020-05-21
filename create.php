@@ -48,7 +48,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         <!-- categories -->
         <div class="form-group">
             <label for="">Категории</label>
-                <select name="categories" id="">
+                <select name="category_id" class="form-control">
 
                     <!-- foreach -->
                     <?php foreach ($categories as $category): ?>
